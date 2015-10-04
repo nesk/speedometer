@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreLocation
 
 class ViewController: UIViewController, SpeedManagerDelegate {
 
@@ -16,11 +15,15 @@ class ViewController: UIViewController, SpeedManagerDelegate {
     let speedManager = SpeedManager()
 
     override func viewDidLoad() {
-        super.viewDidLoad()
         speedManager.delegate = self
+        super.viewDidLoad()
     }
 
-    func speedDidChange(speed: CLLocationSpeed) {
+    @IBAction func toggleNotifications(sender: UISwitch) {
+        SpeedNotifier.sharedNotifier().shouldNotify = sender.on
+    }
+
+    func speedDidChange(speed: Speed) {
         speedLabel?.text = String(Int(speed))
     }
 

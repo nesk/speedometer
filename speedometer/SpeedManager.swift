@@ -6,17 +6,18 @@
 //  Copyright © 2015 Johann Pardanaud. All rights reserved.
 //
 
-import UIKit
 import CoreLocation
 
+typealias Speed = CLLocationSpeed
+
 protocol SpeedManagerDelegate {
-    func speedDidChange(speed: CLLocationSpeed)
+    func speedDidChange(speed: Speed)
 }
 
 class SpeedManager: NSObject, CLLocationManagerDelegate {
 
-    let locationManager: CLLocationManager?
     var delegate: SpeedManagerDelegate?
+    private let locationManager: CLLocationManager?
 
     override init() {
         locationManager = CLLocationManager.locationServicesEnabled() ? CLLocationManager() : nil
