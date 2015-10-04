@@ -7,19 +7,22 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, SpeedManagerDelegate {
+
+    @IBOutlet weak var speedField: UITextField?
+
+    let speedManager = SpeedManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        speedManager.delegate = self
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func speedDidChange(speed: CLLocationSpeed) {
+        speedField?.text = String(Int(speed))
     }
-
 
 }
 

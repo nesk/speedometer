@@ -14,6 +14,7 @@
 		1E1D68C31BBB2490008A6CBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E1D68C11BBB2490008A6CBB /* LaunchScreen.storyboard */; };
 		1E1D68CE1BBB2490008A6CBB /* speedometerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D68CD1BBB2490008A6CBB /* speedometerTests.swift */; };
 		1E1D68D91BBB2490008A6CBB /* speedometerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D68D81BBB2490008A6CBB /* speedometerUITests.swift */; };
+		1E1D68E71BBB333E008A6CBB /* SpeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D68E61BBB333E008A6CBB /* SpeedManager.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		1E1D68D41BBB2490008A6CBB /* speedometerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = speedometerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E1D68D81BBB2490008A6CBB /* speedometerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = speedometerUITests.swift; sourceTree = "<group>"; };
 		1E1D68DA1BBB2490008A6CBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E1D68E61BBB333E008A6CBB /* SpeedManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				1E1D68B81BBB2490008A6CBB /* AppDelegate.swift */,
 				1E1D68BA1BBB2490008A6CBB /* ViewController.swift */,
+				1E1D68E61BBB333E008A6CBB /* SpeedManager.swift */,
 				1E1D68BC1BBB2490008A6CBB /* Main.storyboard */,
 				1E1D68BF1BBB2490008A6CBB /* Assets.xcassets */,
 				1E1D68C11BBB2490008A6CBB /* LaunchScreen.storyboard */,
@@ -256,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E1D68BB1BBB2490008A6CBB /* ViewController.swift in Sources */,
+				1E1D68E71BBB333E008A6CBB /* SpeedManager.swift in Sources */,
 				1E1D68B91BBB2490008A6CBB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +485,7 @@
 				1E1D68DF1BBB2490008A6CBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1E1D68E01BBB2490008A6CBB /* Build configuration list for PBXNativeTarget "speedometerTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +494,7 @@
 				1E1D68E21BBB2490008A6CBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1E1D68E31BBB2490008A6CBB /* Build configuration list for PBXNativeTarget "speedometerUITests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +503,7 @@
 				1E1D68E51BBB2490008A6CBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
