@@ -11,7 +11,7 @@ import CoreLocation
 
 class ViewController: UIViewController, SpeedManagerDelegate {
 
-    @IBOutlet weak var speedField: UITextField?
+    @IBOutlet weak var speedLabel: UILabel?
 
     let speedManager = SpeedManager()
 
@@ -21,7 +21,7 @@ class ViewController: UIViewController, SpeedManagerDelegate {
     }
 
     func speedDidChange(speed: CLLocationSpeed) {
-        speedField?.text = String(Int(speed))
+        speedLabel?.text = String(Int(speed))
     }
 
 }

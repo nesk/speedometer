@@ -16,31 +16,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="78" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xle-SG-eDz">
-                                <rect key="frame" x="250" y="285" width="100" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="228" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8u-kv-Xyx">
+                                <rect key="frame" x="175" y="238" width="250" height="124"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="ruc-3q-cVD"/>
+                                    <constraint firstAttribute="width" constant="250" id="Q1Z-TT-Cra"/>
+                                    <constraint firstAttribute="height" constant="124" id="s5Y-bn-DvF"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="152" y="285" width="97" height="30"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="152" y="385" width="97" height="30"/>
-                                </variation>
-                            </textField>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="140"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="km/h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfC-V1-Axd">
+                                <rect key="frame" x="276" y="386" width="49" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="cXj-bE-XzI"/>
+                                    <constraint firstAttribute="width" constant="49" id="t7m-dL-tsV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Xle-SG-eDz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A91-OP-ixv"/>
-                            <constraint firstItem="Xle-SG-eDz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="o7Y-LV-Q9e"/>
+                            <constraint firstItem="xfC-V1-Axd" firstAttribute="centerX" secondItem="y8u-kv-Xyx" secondAttribute="centerX" id="IIE-9p-Usu"/>
+                            <constraint firstItem="y8u-kv-Xyx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MtT-rN-bCb"/>
+                            <constraint firstItem="xfC-V1-Axd" firstAttribute="top" secondItem="y8u-kv-Xyx" secondAttribute="bottom" constant="24" id="kke-if-jCv"/>
+                            <constraint firstItem="y8u-kv-Xyx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="t9s-ms-gBi"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="speedField" destination="Xle-SG-eDz" id="Mr3-jB-6rA"/>
+                        <outlet property="speedLabel" destination="y8u-kv-Xyx" id="Gpa-dd-yRu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
