@@ -44,7 +44,7 @@ class SpeedManager: NSObject, CLLocationManagerDelegate {
 
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if locations.count > 0 {
-            let kmph = locations[locations.count - 1].speed / 1000 * 3600;
+            let kmph = max(locations[locations.count - 1].speed / 1000 * 3600, 0);
             delegate?.speedDidChange(kmph);
         }
     }
