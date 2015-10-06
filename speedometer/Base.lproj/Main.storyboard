@@ -70,6 +70,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="notificationsSwitch" destination="jPZ-5r-uN9" id="twK-dH-Yw4"/>
                         <outlet property="speedLabel" destination="y8u-kv-Xyx" id="Gpa-dd-yRu"/>
                     </connections>
                 </viewController>

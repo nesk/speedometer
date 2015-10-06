@@ -17,6 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: Bool -> Void) {
+        SpeedNotifier.sharedNotifier().shouldNotify = shortcutItem.type == "speed.notifications.enable"
+    }
+
     func applicationDidBecomeActive(application: UIApplication) {
         SpeedNotifier.sharedNotifier().clearNotifications()
     }
