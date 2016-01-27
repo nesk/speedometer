@@ -14,8 +14,8 @@
 		1E1D68C31BBB2490008A6CBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E1D68C11BBB2490008A6CBB /* LaunchScreen.storyboard */; };
 		1E1D68CE1BBB2490008A6CBB /* speedometerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D68CD1BBB2490008A6CBB /* speedometerTests.swift */; };
 		1E1D68D91BBB2490008A6CBB /* speedometerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D68D81BBB2490008A6CBB /* speedometerUITests.swift */; };
-		1E1D68E71BBB333E008A6CBB /* SpeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D68E61BBB333E008A6CBB /* SpeedManager.swift */; settings = {ASSET_TAGS = (); }; };
-		1EAEA67E1BC31BA700B7625B /* SpeedNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAEA67D1BC31BA700B7625B /* SpeedNotifier.swift */; settings = {ASSET_TAGS = (); }; };
+		1E1D68E71BBB333E008A6CBB /* SpeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D68E61BBB333E008A6CBB /* SpeedManager.swift */; };
+		1EAEA67E1BC31BA700B7625B /* SpeedNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAEA67D1BC31BA700B7625B /* SpeedNotifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,7 +198,6 @@
 				TargetAttributes = {
 					1E1D68B41BBB2490008A6CBB = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = 2BAFAH9PZC;
 					};
 					1E1D68C81BBB2490008A6CBB = {
 						CreatedOnToolsVersion = 7.0;
