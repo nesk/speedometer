@@ -28,25 +28,24 @@ class SpeedManager: NSObject, CLLocationManagerDelegate {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
 
-            if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.NotDetermined {
+            if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.notDetermined {
                 locationManager.requestAlwaysAuthorization()
-            } else if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.AuthorizedAlways {
+            } else if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedAlways {
                 locationManager.startUpdatingLocation()
             }
         }
     }
 
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        if status == CLAuthorizationStatus.AuthorizedAlways {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == CLAuthorizationStatus.authorizedAlways {
             locationManager?.startUpdatingLocation()
         }
     }
-
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if locations.count > 0 {
-            let kmph = max(locations[locations.count - 1].speed / 1000 * 3600, 0);
-            delegate?.speedDidChange(kmph);
-        }
+                   let kmph = max(locations[locations.count - 1].speed / 1000 * 3600, 0);
+                   delegate?.speedDidChange(speed: kmph);
+               }
     }
-
 }

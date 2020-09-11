@@ -22,11 +22,11 @@ class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDeleg
     }
 
     @IBAction func toggleNotifications(sender: UISwitch) {
-        SpeedNotifier.sharedNotifier().shouldNotify = sender.on
+        SpeedNotifier.sharedNotifier().shouldNotify = sender.isOn
     }
 
     func notificationsStatusDidChange(shouldNotify: Bool) {
-        notificationsSwitch?.on = shouldNotify
+        notificationsSwitch?.isOn = shouldNotify
     }
 
     func speedDidChange(speed: Speed) {

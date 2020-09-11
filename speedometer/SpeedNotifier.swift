@@ -17,7 +17,7 @@ class SpeedNotifier: NSObject, SpeedManagerDelegate {
     static private let sharedInstance = SpeedNotifier()
 
     var delegate: SpeedNotifierDelegate?
-    var notificationsInterval: NSTimeInterval = 7
+    var notificationsInterval: TimeInterval = 7
 
     var shouldNotify = false {
         didSet {
@@ -33,7 +33,7 @@ class SpeedNotifier: NSObject, SpeedManagerDelegate {
             type: "speed.notifications.enable",
             localizedTitle: "Me notifier",
             localizedSubtitle: "Active les notifications",
-            icon: UIApplicationShortcutIcon(type: UIApplicationShortcutIconType.Location),
+            icon: UIApplicationShortcutIcon(type: UIApplicationShortcutIcon.IconType.location),
             userInfo: nil
         ),
 
@@ -41,7 +41,7 @@ class SpeedNotifier: NSObject, SpeedManagerDelegate {
             type: "speed.notifications.disable",
             localizedTitle: "Ne plus me notifier",
             localizedSubtitle: "Désactive les notifications",
-            icon: UIApplicationShortcutIcon(type: UIApplicationShortcutIconType.Pause),
+            icon: UIApplicationShortcutIcon(type: UIApplicationShortcutIcon.IconType.pause),
             userInfo: nil
         )
     ]
@@ -55,18 +55,18 @@ class SpeedNotifier: NSObject, SpeedManagerDelegate {
 
         speedManager.delegate = self
 
-        let notificationSettings = UIUserNotificationSettings(forTypes: [UIUserNotificationType.Alert], categories: nil)
-        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+        let notificationSettings = UIUserNotificationSettings(types: [UIUserNotificationType.alert], categories: nil)
+        UIApplication.shared.registerUserNotificationSettings(notificationSettings)
 
         notificationsStatusDidChange()
     }
 
     func clearNotifications() {
-        UIApplication.sharedApplication().cancelAllLocalNotifications()
+        UIApplication.shared.cancelAllLocalNotifications()
     }
 
     func speedDidChange(speed: Speed) {
-        let canNotify = (lastNotificationTime == nil || lastNotificationTime?.timeIntervalSinceNow <= -7)
+        let canNotify = (lastNotificationTime == nil || lastNotificationTime!.timeIntervalSinceNow <= Double(-7))
                         && shouldNotify
 
         if canNotify {
@@ -74,7 +74,7 @@ class SpeedNotifier: NSObject, SpeedManagerDelegate {
             notification.alertBody = "\(Int(speed)) km/h"
 
             clearNotifications()
-            UIApplication.sharedApplication().scheduleLocalNotification(notification)
+            UIApplication.shared.scheduleLocalNotification(notification)
 
             lastNotificationTime = NSDate()
         }
@@ -84,10 +84,10 @@ class SpeedNotifier: NSObject, SpeedManagerDelegate {
         let shortcutKey = shouldNotify ? "disable" : "enable"
 
         if let shortcut = shortcuts[shortcutKey] {
-            UIApplication.sharedApplication().shortcutItems = [shortcut]
+            UIApplication.shared.shortcutItems = [shortcut]
         }
 
-        delegate?.notificationsStatusDidChange(shouldNotify)
+        delegate?.notificationsStatusDidChange(shouldNotify: shouldNotify)
     }
 
 }
