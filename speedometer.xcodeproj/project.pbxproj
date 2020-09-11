@@ -16,6 +16,7 @@
 		1E1D68D91BBB2490008A6CBB /* speedometerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D68D81BBB2490008A6CBB /* speedometerUITests.swift */; };
 		1E1D68E71BBB333E008A6CBB /* SpeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D68E61BBB333E008A6CBB /* SpeedManager.swift */; };
 		1EAEA67E1BC31BA700B7625B /* SpeedNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAEA67D1BC31BA700B7625B /* SpeedNotifier.swift */; };
+		4522243A250B55BB0043CCAF /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 45222439250B55BB0043CCAF /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		1E1D68DA1BBB2490008A6CBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E1D68E61BBB333E008A6CBB /* SpeedManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedManager.swift; sourceTree = "<group>"; };
 		1EAEA67D1BC31BA700B7625B /* SpeedNotifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedNotifier.swift; sourceTree = "<group>"; };
+		45222439250B55BB0043CCAF /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		1E1D68AC1BBB2490008A6CBB = {
 			isa = PBXGroup;
 			children = (
+				45222439250B55BB0043CCAF /* .swiftlint.yml */,
 				1E1D68B71BBB2490008A6CBB /* speedometer */,
 				1E1D68CC1BBB2490008A6CBB /* speedometerTests */,
 				1E1D68D71BBB2490008A6CBB /* speedometerUITests */,
@@ -141,6 +144,7 @@
 				1E1D68B11BBB2490008A6CBB /* Sources */,
 				1E1D68B21BBB2490008A6CBB /* Frameworks */,
 				1E1D68B31BBB2490008A6CBB /* Resources */,
+				45222438250B55750043CCAF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -198,6 +202,7 @@
 				TargetAttributes = {
 					1E1D68B41BBB2490008A6CBB = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 52Z3KTJU94;
 					};
 					1E1D68C81BBB2490008A6CBB = {
 						CreatedOnToolsVersion = 7.0;
@@ -234,6 +239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4522243A250B55BB0043CCAF /* .swiftlint.yml in Resources */,
 				1E1D68C31BBB2490008A6CBB /* LaunchScreen.storyboard in Resources */,
 				1E1D68C01BBB2490008A6CBB /* Assets.xcassets in Resources */,
 				1E1D68BE1BBB2490008A6CBB /* Main.storyboard in Resources */,
@@ -255,6 +261,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		45222438250B55750043CCAF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint autocorrect --format\n  swiftlint\nelse\n  echo \"warning: Mint not installed, download from https://github.com/yonaskolb/Mint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1E1D68B11BBB2490008A6CBB /* Sources */ = {
@@ -431,7 +457,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 52Z3KTJU94;
 				INFOPLIST_FILE = speedometer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jpardanaud.speedometer;
@@ -446,7 +472,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 52Z3KTJU94;
 				INFOPLIST_FILE = speedometer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jpardanaud.speedometer;
