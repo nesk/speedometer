@@ -8,15 +8,15 @@
 
 import UIKit
 
-protocol SpeedNotifierDelegate {
+protocol SpeedNotifierDelegate: AnyObject {
     func notificationsStatusDidChange(shouldNotify: Bool)
 }
 
 class SpeedNotifier: NSObject, SpeedManagerDelegate {
 
-    static private let sharedInstance = SpeedNotifier()
+    private static let sharedInstance = SpeedNotifier()
 
-    var delegate: SpeedNotifierDelegate?
+    weak var delegate: SpeedNotifierDelegate?
     var notificationsInterval: TimeInterval = 7
 
     var shouldNotify = false {
@@ -26,7 +26,7 @@ class SpeedNotifier: NSObject, SpeedManagerDelegate {
     }
 
     private let speedManager = SpeedManager()
-    private var lastNotificationTime: NSDate? = nil
+    private var lastNotificationTime: Date?
 
     private let shortcuts = [
         "enable": UIApplicationShortcutItem(
@@ -47,10 +47,10 @@ class SpeedNotifier: NSObject, SpeedManagerDelegate {
     ]
 
     static func sharedNotifier() -> SpeedNotifier {
-        return sharedInstance
+        sharedInstance
     }
 
-    private override init() {
+    override private init() {
         super.init()
 
         speedManager.delegate = self
@@ -67,7 +67,7 @@ class SpeedNotifier: NSObject, SpeedManagerDelegate {
 
     func speedDidChange(speed: Speed) {
         let canNotify = (lastNotificationTime == nil || lastNotificationTime!.timeIntervalSinceNow <= Double(-7))
-                        && shouldNotify
+            && shouldNotify
 
         if canNotify {
             let notification = UILocalNotification()
@@ -76,7 +76,7 @@ class SpeedNotifier: NSObject, SpeedManagerDelegate {
             clearNotifications()
             UIApplication.shared.scheduleLocalNotification(notification)
 
-            lastNotificationTime = NSDate()
+            lastNotificationTime = Date()
         }
     }
 

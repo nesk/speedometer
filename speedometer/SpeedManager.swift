@@ -10,13 +10,13 @@ import CoreLocation
 
 typealias Speed = CLLocationSpeed
 
-protocol SpeedManagerDelegate {
+protocol SpeedManagerDelegate: AnyObject {
     func speedDidChange(speed: Speed)
 }
 
 class SpeedManager: NSObject, CLLocationManagerDelegate {
 
-    var delegate: SpeedManagerDelegate?
+    weak var delegate: SpeedManagerDelegate?
     private let locationManager: CLLocationManager?
 
     override init() {
@@ -41,11 +41,11 @@ class SpeedManager: NSObject, CLLocationManagerDelegate {
             locationManager?.startUpdatingLocation()
         }
     }
-    
+
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if locations.count > 0 {
-                   let kmph = max(locations[locations.count - 1].speed / 1000 * 3600, 0);
-                   delegate?.speedDidChange(speed: kmph);
-               }
+        if !locations.isEmpty {
+            let kmph = max(locations[locations.count - 1].speed / 1000 * 3600, 0)
+            delegate?.speedDidChange(speed: kmph)
+        }
     }
 }
