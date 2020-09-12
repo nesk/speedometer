@@ -141,7 +141,6 @@
 				1E1D68B11BBB2490008A6CBB /* Sources */,
 				1E1D68B21BBB2490008A6CBB /* Frameworks */,
 				1E1D68B31BBB2490008A6CBB /* Resources */,
-				45222438250B55750043CCAF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -256,26 +255,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		45222438250B55750043CCAF /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint autocorrect --format\n  swiftlint\nelse\n  echo \"warning: Mint not installed, download from https://github.com/yonaskolb/Mint\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1E1D68B11BBB2490008A6CBB /* Sources */ = {

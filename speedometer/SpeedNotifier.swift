@@ -47,7 +47,7 @@ class SpeedNotifier: NSObject, SpeedManagerDelegate {
     ]
 
     static func sharedNotifier() -> SpeedNotifier {
-        sharedInstance
+        return sharedInstance
     }
 
     override private init() {
