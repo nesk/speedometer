@@ -10,8 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDelegate {
 
-    @IBOutlet weak var speedLabel: UILabel?
-    @IBOutlet weak var notificationsSwitch: UISwitch?
+    @IBOutlet private weak var speedLabel: UILabel?
+    @IBOutlet private weak var notificationsSwitch: UISwitch?
 
     let speedManager = SpeedManager()
 
@@ -21,12 +21,12 @@ class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDeleg
         super.viewDidLoad()
     }
 
-    @IBAction func toggleNotifications(sender: UISwitch) {
-        SpeedNotifier.sharedNotifier().shouldNotify = sender.on
+    @IBAction private func toggleNotifications(sender: UISwitch) {
+        SpeedNotifier.sharedNotifier().shouldNotify = sender.isOn
     }
 
     func notificationsStatusDidChange(shouldNotify: Bool) {
-        notificationsSwitch?.on = shouldNotify
+        notificationsSwitch?.isOn = shouldNotify
     }
 
     func speedDidChange(speed: Speed) {
@@ -34,4 +34,3 @@ class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDeleg
     }
 
 }
-
