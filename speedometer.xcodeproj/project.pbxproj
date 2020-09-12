@@ -16,7 +16,6 @@
 		1E1D68D91BBB2490008A6CBB /* speedometerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D68D81BBB2490008A6CBB /* speedometerUITests.swift */; };
 		1E1D68E71BBB333E008A6CBB /* SpeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D68E61BBB333E008A6CBB /* SpeedManager.swift */; };
 		1EAEA67E1BC31BA700B7625B /* SpeedNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAEA67D1BC31BA700B7625B /* SpeedNotifier.swift */; };
-		4522243A250B55BB0043CCAF /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 45222439250B55BB0043CCAF /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +51,6 @@
 		1E1D68DA1BBB2490008A6CBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E1D68E61BBB333E008A6CBB /* SpeedManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedManager.swift; sourceTree = "<group>"; };
 		1EAEA67D1BC31BA700B7625B /* SpeedNotifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedNotifier.swift; sourceTree = "<group>"; };
-		45222439250B55BB0043CCAF /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +81,6 @@
 		1E1D68AC1BBB2490008A6CBB = {
 			isa = PBXGroup;
 			children = (
-				45222439250B55BB0043CCAF /* .swiftlint.yml */,
 				1E1D68B71BBB2490008A6CBB /* speedometer */,
 				1E1D68CC1BBB2490008A6CBB /* speedometerTests */,
 				1E1D68D71BBB2490008A6CBB /* speedometerUITests */,
@@ -239,7 +236,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4522243A250B55BB0043CCAF /* .swiftlint.yml in Resources */,
 				1E1D68C31BBB2490008A6CBB /* LaunchScreen.storyboard in Resources */,
 				1E1D68C01BBB2490008A6CBB /* Assets.xcassets in Resources */,
 				1E1D68BE1BBB2490008A6CBB /* Main.storyboard in Resources */,
